@@ -9,6 +9,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '../front-end/dist'))); // UI files
 app.use(express.static(path.join(__dirname, '/articles'))); // Articles files
+app.use(express.static(path.join(__dirname, '/mejs'))); // Mejs files
 
 paths.forEach(_path => {
     app.get(_path, (req, res) => {
@@ -17,11 +18,11 @@ paths.forEach(_path => {
 }); // UI get requests routing
 
 app.get('/articles:article', (req, res) => {
-    res.sendFile(path.join(__dirname, 'articles',`${req.params.article.substring(1)}`));
+    res.sendFile(path.join(__dirname, 'articles', `${req.params.article.substring(1)}`));
 }); // Articles get requests routing
 
 app.get('/mejs:mej', (req, res) => {
-    res.sendFile(path.join(__dirname, 'mejs',`${req.params.mej.substring(1)}`));
+    res.sendFile(path.join(__dirname, 'mejs', `${req.params.mej.substring(1)}`));
 }); // Mejs get requests routing
 
 app.use((req, res, next) => {
