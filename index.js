@@ -3,13 +3,14 @@ import { PORT } from './config.js';
 import path from 'path';
 
 const __dirname = path.resolve(); // Root
-const paths = ['/', '/files', '/mej', '/staff']; // Basic links
+const paths = ['/', '/files', '/mej', '/experiences', '/staff']; // Basic links
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, '../front-end/dist'))); // UI files
 app.use(express.static(path.join(__dirname, '/articles'))); // Articles files
 app.use(express.static(path.join(__dirname, '/mejs'))); // Mejs files
+app.use(express.static(path.join(__dirname, '/experiences'))); // Experiences files
 
 paths.forEach(_path => {
     app.get(_path, (req, res) => {
@@ -24,6 +25,10 @@ app.get('/articles:article', (req, res) => {
 app.get('/mejs:mej', (req, res) => {
     res.sendFile(path.join(__dirname, 'mejs', `${req.params.mej.substring(1)}`));
 }); // Mejs get requests routing
+
+app.get('/experiences:experience', (req, res) => {
+    res.sendFile(path.join(__dirname, 'experiences', `${req.params.experience.substring(1)}`));
+}); // Experiences get requests routing
 
 app.use((req, res, next) => {
     const error = new Error('Resource not found');
