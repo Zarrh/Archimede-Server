@@ -42,9 +42,9 @@ class MainCity(MovingCameraScene):
             self.play(Create(lines[2*i]), Create(lines[2*i+1]), run_time=0.3)
 
         hospitals = [
-            Dot(point=hospitals_coord[0], color="#2881bd", z_index=2),
-            Dot(point=hospitals_coord[1], color="#2881bd", z_index=2),
-            Dot(point=hospitals_coord[2], color="#2881bd", z_index=2),
+            Dot(point=hospitals_coord[0], color="#c00e4d", z_index=2),
+            Dot(point=hospitals_coord[1], color="#c00e4d", z_index=2),
+            Dot(point=hospitals_coord[2], color="#c00e4d", z_index=2),
         ]
 
         F = Dot(point=F_coord, color="#9914ff", z_index=2)
