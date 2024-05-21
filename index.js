@@ -7,7 +7,7 @@ const paths = ['/', '/files', '/mej', '/experiences', '/us', '/staff', '/login']
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '../front-end/dist'))); // UI files
+app.use(express.static(path.join(__dirname, './dist'))); // UI files
 app.use(express.static(path.join(__dirname, '/articles'))); // Articles files
 app.use(express.static(path.join(__dirname, '/mejs'))); // Mejs files
 app.use(express.static(path.join(__dirname, '/experiences'))); // Experiences files
