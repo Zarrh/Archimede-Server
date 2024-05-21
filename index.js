@@ -18,7 +18,7 @@ paths.forEach(_path => {
     app.get(_path, (req, res) => {
         res.header('X-Content-Type-Options', 'text/html');
         res.header('X-Frame-Options', 'DENY');
-        res.sendFile(path.join(__dirname, '../front-end', 'dist', 'index.html'));
+        res.sendFile(path.join(__dirname, 'dist', 'index.html'));
     });
 }); // UI GET requests routing
 
@@ -46,11 +46,11 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
-    res.json({
+    /*res.json({
       error: {
         message: err.message
       }
-    });
+    });*/
 }); // Error handling
 
 app.listen(PORT, () => {
