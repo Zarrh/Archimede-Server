@@ -7,3 +7,5 @@ mejs
 experiences
 .git
 media
+.htaccess
+*.php
