@@ -6,6 +6,7 @@ const __dirname = path.resolve(); // Root
 const paths = ['/', '/files', '/mej', '/experiences', '/us', '/staff', '/login']; // Basic links
 
 const app = express();
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, './dist'))); // UI files
 app.use(express.static(path.join(__dirname, '/articles'))); // Articles files
