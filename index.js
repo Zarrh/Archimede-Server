@@ -31,6 +31,14 @@ app.get('/articles/essays:essay', (req, res) => {
     res.sendFile(path.join(__dirname, 'articles/essays', `${req.params.essay.substring(1)}`));
 }); // Essays GET requests routing
 
+app.get('/articles/researches:research', (req, res) => {
+    res.sendFile(path.join(__dirname, 'articles/researches', `${req.params.research.substring(1)}`));
+}); // Researches GET requests routing
+
+app.get('/articles/matrices:article', (req, res) => {
+    res.sendFile(path.join(__dirname, 'articles/matrices', `${req.params.article.substring(1)}`));
+}); // Matrices articles GET requests routing
+
 app.get('/mejs:mej', (req, res) => {
     res.sendFile(path.join(__dirname, 'mejs', `${req.params.mej.substring(1)}`));
 }); // Mejs GET requests routing
