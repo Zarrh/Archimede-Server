@@ -3,7 +3,7 @@ import { PORT } from './config.js';
 import path from 'path';
 
 const __dirname = path.resolve(); // Root
-const paths = ['/', '/files', '/mej', '/experiences', '/us', '/staff', '/login']; // Basic links
+const paths = ['/', '/files', '/mej', '/experiences', '/us', '/staff', '/stats', '/login']; // Basic links
 
 const app = express();
 // app.use(cors());
